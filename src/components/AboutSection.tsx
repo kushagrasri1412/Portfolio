@@ -1,11 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { ABOUT, HERO } from "@/data/portfolio";
 import { RevealHeading, RevealLabel, RevealBlock, RevealList, revealItem } from "./TextReveal";
 
+const ResumeModal = dynamic(() => import("./ResumeModal"), { ssr: false });
+
 export default function AboutSection() {
+  const [resumeOpen, setResumeOpen] = useState(false);
+
   return (
     <section id="about" className="section-wrapper section-bg-1 relative overflow-hidden">
       <div className="max-w-5xl mx-auto w-full relative z-10">
@@ -52,11 +58,36 @@ export default function AboutSection() {
                 }}
               />
             </div>
-            <div className="mt-2 text-center">
+            <div className="mt-2 flex items-center justify-center gap-2">
               <span className="mono-label text-[0.55rem]" style={{ color: "var(--text-muted)", opacity: 0.5 }}>
                 ID_VERIFIED
               </span>
             </div>
+            {/* View Dossier button under photo */}
+            <motion.button
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              onClick={() => setResumeOpen(true)}
+              className="mt-3 w-full flex items-center justify-center gap-2 py-2 transition-all hover:opacity-80 group"
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.6rem",
+                letterSpacing: "2px",
+                color: "var(--accent-cyan)",
+                border: "1px solid var(--border)",
+                background: "rgba(0,255,255,0.03)",
+              }}
+            >
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+              VIEW DOSSIER
+            </motion.button>
           </motion.div>
 
           {/* FAANG-style recruiter summary */}
@@ -135,6 +166,8 @@ export default function AboutSection() {
           </motion.div>
         </RevealList>
       </div>
+
+      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
     </section>
   );
 }
