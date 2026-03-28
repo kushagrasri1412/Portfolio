@@ -79,6 +79,8 @@ export type Experience = {
   tech: string[];
   color: string;
   highlight?: boolean;
+  cert?: string; // path to certificate in /public
+  certType?: "pdf" | "img";
 };
 
 export const EXPERIENCES: Experience[] = [
@@ -97,27 +99,32 @@ export const EXPERIENCES: Experience[] = [
     color: "#4FC3F7",
   },
   {
-    company: "GRID",
-    role: "Frontend & Web Performance Engineering Intern",
-    period: "Jul 2025 – Aug 2025",
+    company: "Swati Power",
+    role: "Software Development Engineer Intern",
+    period: "May 2025 – Aug 2025",
     metrics: [
-      "Improved page-load performance by 25% across 15K+ monthly visits; reduced TTI from 3.2s to 2.4s",
-      "Saved 8 hours/week of editorial overhead by building admin-configurable content modules",
-      "Increased user retention by 18% via analytics pipeline and data-driven UX improvements",
+      "Built backend data pipeline systems demonstrating proficiency in backend development, cloud deployment, and data pipeline engineering",
+      "Designed and deployed cloud-native infrastructure for electrical contractor operations serving New Delhi region clients",
+      "Implemented automated workflows reducing manual processing overhead across multiple operational departments",
     ],
-    tech: ["Next.js", "React", "Analytics", "Bundle Optimization"],
+    tech: ["Backend Development", "Cloud Deployment", "Data Pipelines"],
     color: "#B388FF",
+    cert: "/certificates/swatipower-cert.jpg",
+    certType: "img",
   },
   {
-    company: "Arizona State University",
-    role: "Student Data Verifier, Admission Services",
-    period: "Oct 2023 – Jun 2024",
+    company: "Atthah Info Media",
+    role: "Software Development Engineer Intern",
+    period: "Jun 2024 – Aug 2024",
     metrics: [
-      "Maintained 99.7% data integrity across 5K+ applicant records with FERPA-compliant verification workflows",
-      "Reduced processing time from 12 to 9 min/application and cut verification errors by 15% with Excel dashboards",
+      "Collaborated with a 3-engineer team to build a React/TypeScript admin dashboard managing live content across 10+ client deployments, cutting editorial turnaround time by 35%",
+      "Partnered with backend and analytics engineers to build a Python/FastAPI REST API supporting 500+ concurrent connections, replacing a legacy polling system and reducing data retrieval latency by 40%",
+      "Automated a GCP-based media asset pipeline across 5+ client campaigns alongside senior engineers, reducing processing turnaround from 3 days to under 8 hours",
     ],
-    tech: ["PeopleSoft", "Salesforce", "Excel", "FERPA"],
+    tech: ["React", "TypeScript", "Python", "FastAPI", "GCP"],
     color: "#00E5FF",
+    cert: "/certificates/atthah-cert.pdf",
+    certType: "pdf",
   },
 ];
 

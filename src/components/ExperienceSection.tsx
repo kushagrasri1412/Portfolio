@@ -7,8 +7,8 @@ import { RevealHeading, RevealLabel, RevealList, revealItem } from "./TextReveal
 
 const STATUS_MAP: Record<string, string> = {
   "Aug 2025 – Present": "DEPLOYED",
-  "Jul 2025 – Aug 2025": "DEPLOYED",
-  "Oct 2023 – Jun 2024": "ARCHIVED",
+  "May 2025 – Aug 2025": "ARCHIVED",
+  "Jun 2024 – Aug 2024": "ARCHIVED",
 };
 
 export default function ExperienceSection() {
@@ -89,6 +89,30 @@ export default function ExperienceSection() {
                             <span key={t} className="skill-tag text-[0.75rem] py-1 px-3">{t}</span>
                           ))}
                         </div>
+                        {exp.cert && (
+                          <a
+                            href={exp.cert}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-2 mt-2 py-1.5 px-3 transition-all hover:opacity-80"
+                            style={{
+                              fontFamily: "var(--font-mono)",
+                              fontSize: "0.65rem",
+                              letterSpacing: "2px",
+                              color: "var(--accent-cyan)",
+                              border: "1px solid var(--border)",
+                              background: "rgba(0,255,255,0.04)",
+                              textTransform: "uppercase",
+                            }}
+                          >
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                              <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                            View Certificate
+                          </a>
+                        )}
                       </div>
                     </motion.div>
                   )}
