@@ -170,6 +170,21 @@ export const PROJECTS: Project[] = [
     color: "#FF80AB",
     github: "https://github.com/kushagrasri1412/PyroCache",
   },
+  {
+    name: "SCAVENGER",
+    tagline: "Job Aggregator with H-1B Sponsorship Intelligence",
+    description:
+      "Local-first job pipeline that fetches, dedups and diffs postings across ~100 company boards, then scores each employer's sponsorship likelihood from real DOL disclosure filings and ranks openings against your résumé with pgvector semantic matching.",
+    metrics: [
+      "606K+ DOL disclosure rows ingested",
+      "109 live company boards tracked",
+      "630 tests, zero network calls",
+      "Semantic résumé matching via pgvector",
+      "Prefills applications, never auto-submits",
+    ],
+    tech: ["Python", "FastAPI", "PostgreSQL", "pgvector", "Ollama", "Docker"],
+    color: "#69F0AE",
+  },
 ];
 
 export type Award = {

@@ -8,6 +8,7 @@ import { RevealHeading, RevealLabel, RevealList, revealItem } from "./TextReveal
 const VERSION_MAP: Record<string, string> = {
   TOURGAIDE: "v2.0_LIVE",
   PYROCACHE: "BETA",
+  SCAVENGER: "ACTIVE_DEV",
 };
 
 export default function ProjectsSection() {
